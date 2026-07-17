@@ -11,8 +11,8 @@ If you're stuck, read the `hint` for that exercise below. The exercises follow
 the chapters of the *Learning Burn* book."""
 
 final_message = """
-That's chapters 1-2 — tensors and tensor ops. Next chapters (matmul, autodiff,
-losses, backprop, a from-scratch MLP) follow the Learning Burn book.
+That's chapters 1-3 — tensors, tensor ops, and matmul. Next chapters (norms &
+autodiff, losses, backprop, a from-scratch MLP) follow the Learning Burn book.
 """
 
 # CHAPTER 1 — TENSORS
@@ -182,3 +182,37 @@ The mask must be true where x is GREATER than 0. The body uses `lower_elem`
 9.0 at those positions.
 
 Compare book example chapter02/e06_elementwise_masking."""
+
+# CHAPTER 3 — MATMUL & THE SHAPE RULE
+
+[[exercises]]
+name = "matmul1"
+dir = "03_matmul"
+test = true
+hint = """
+`*` multiplies matching positions element-wise; that's not the matrix product.
+Use `a.matmul(b)` for the real [m, k] @ [k, n] -> [m, n] product.
+
+Compare book example chapter03/e01_matmul."""
+
+[[exercises]]
+name = "matmul2"
+dir = "03_matmul"
+test = true
+hint = """
+`matmul` needs two rank-2 tensors, so `m.matmul(v)` (v is a vector) won't
+compile. A matrix times a vector is `linalg::matvec(m, v)`, which returns a
+rank-1 tensor.
+
+Compare book example chapter03/e02_transpose_matvec_outer."""
+
+[[exercises]]
+name = "matmul3"
+dir = "03_matmul"
+test = true
+hint = """
+Batched matmul is [b, m, k] @ [b, k, n] -> [b, m, n]. `a` is [4, 2, 3], so to
+get [4, 2, 5] the second operand must be [4, 3, 5]. Fix `b`'s last dimension
+(and keep its middle dim 3 so the inner dims still match).
+
+Compare book example chapter03/e03_structured_and_batched."""
