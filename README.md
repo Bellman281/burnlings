@@ -21,22 +21,29 @@ burnlings/
 ├── info.toml             # exercise list + hints (Rustlings format)
 ├── exercises/
 │   └── 01_tensors/
-│       └── tensors1.rs   # <- the exercise you solve
+│       ├── tensors1.rs … tensors9.rs   # <- the exercises you solve
+│       └── README.md
 └── solutions/
     └── 01_tensors/
-        └── tensors1.rs   # <- reference solution (peek only if stuck)
+        └── tensors1.rs … tensors9.rs   # <- reference (peek only if stuck)
 ```
 
-## Try the sample exercise
+## Chapter 1 — tensors (9 exercises)
 
 ```bash
-cargo run  --example tensors1     # runs it (fails until you fix the rank)
+cargo run  --example tensors1     # runs it (fails until you fix it)
 cargo test --example tensors1     # checks it with the built-in test
 ```
 
-`tensors1` is broken on purpose — it won't compile until you fix it. That's the
-point. If you get stuck, read the `hint` for `tensors1` in `info.toml`, or open
-`solutions/01_tensors/tensors1.rs`.
+Every exercise is broken on purpose — it won't pass until you fix it. Five are
+compile errors, four are logic errors caught by a test. Work through
+`tensors1` → `tensors9`; they follow the *Learning Burn* book's chapter 1, one
+concept each (rank, creation, int tensors, filled constructors, random,
+building from a struct, the data bridge, ownership/cloning, float closeness).
+See `exercises/01_tensors/README.md` for the exercise-to-book map.
+
+Stuck? Read the `hint` for that exercise in `info.toml`, or open the matching
+file under `solutions/01_tensors/`.
 
 ## Relationship to Learning Burn
 
