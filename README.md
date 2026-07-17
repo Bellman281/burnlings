@@ -45,6 +45,19 @@ See `exercises/01_tensors/README.md` for the exercise-to-book map.
 Stuck? Read the `hint` for that exercise in `info.toml`, or open the matching
 file under `solutions/01_tensors/`.
 
+## Chapter 2 — tensor ops (6 exercises)
+
+```bash
+cargo run  --example ops1
+cargo test --example ops1
+```
+
+Computing with tensors: element-wise arithmetic, broadcasting (`unsqueeze`),
+reshaping and slicing, reductions, feature standardisation, and boolean masking.
+Work through `ops1` → `ops6`; they follow the *Learning Burn* book's chapter 2.
+One is a compile error, five are logic errors caught by a test. See
+`exercises/02_ops/README.md` for the exercise-to-book map.
+
 ## Relationship to Learning Burn
 
 Exercises mirror the runnable examples in the

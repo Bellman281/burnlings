@@ -11,7 +11,7 @@ If you're stuck, read the `hint` for that exercise below. The exercises follow
 the chapters of the *Learning Burn* book."""
 
 final_message = """
-That's chapter 1 — tensors. Next chapters (ops & broadcasting, matmul, autodiff,
+That's chapters 1-2 — tensors and tensor ops. Next chapters (matmul, autodiff,
 losses, backprop, a from-scratch MLP) follow the Learning Burn book.
 """
 
@@ -118,3 +118,67 @@ hint = """
 The comparison is backwards — flip `max_diff > tol` to `max_diff < tol`.
 
 Compare book example ch1_09_display_and_closeness.rs."""
+
+# CHAPTER 2 — TENSOR OPS
+
+[[exercises]]
+name = "ops1"
+dir = "02_ops"
+test = true
+hint = """
+On two tensors, `*` is element-wise multiplication, not matrix multiplication.
+The body adds (`a + b`); change it to `a * b` to get [10, 40, 90].
+
+Compare book example chapter02/e01_arithmetic."""
+
+[[exercises]]
+name = "ops2"
+dir = "02_ops"
+test = true
+hint = """
+Burn won't add a rank-2 matrix and a rank-1 vector — different types. Raise the
+vector with `unsqueeze()` so it becomes [1, 3], then it broadcasts over the
+rows: `m + bias.unsqueeze()`.
+
+Compare book example chapter02/e02_broadcasting."""
+
+[[exercises]]
+name = "ops3"
+dir = "02_ops"
+test = true
+hint = """
+`slice` uses half-open ranges [start..end), end EXCLUSIVE. Rows 0-1 is `0..2`
+and columns 1-2 is `1..3`: `m.slice([0..2, 1..3])`.
+
+Compare book example chapter02/e03_reshaping_slicing."""
+
+[[exercises]]
+name = "ops4"
+dir = "02_ops"
+test = true
+hint = """
+`sum_dim(0)` collapses the rows, leaving a per-column sum of shape [1, 2].
+`sum_dim(1)` (what's there now) collapses the columns instead. Use dim 0.
+
+Compare book example chapter02/e04_reductions."""
+
+[[exercises]]
+name = "ops5"
+dir = "02_ops"
+test = true
+hint = """
+Standard deviation is the square root of the variance. `var(0)` gives the
+variance; add `.sqrt()`: `let std = x.clone().var(0).sqrt();`.
+
+Compare book example chapter02/e05_standardize_features."""
+
+[[exercises]]
+name = "ops6"
+dir = "02_ops"
+test = true
+hint = """
+The mask must be true where x is GREATER than 0. The body uses `lower_elem`
+(true where x < 0); change it to `greater_elem(0.0)`. `mask_where` then swaps in
+9.0 at those positions.
+
+Compare book example chapter02/e06_elementwise_masking."""
