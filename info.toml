@@ -1,0 +1,33 @@
+format_version = 1
+
+welcome_message = """
+Welcome to Burnlings — small exercises to get you writing deep-learning code
+in Rust with the Burn framework, the same way Rustlings teaches Rust.
+
+Each exercise contains a compiler or logic error. Your job is to fix it.
+Remove the `// I AM NOT DONE` comment once you think you've solved one.
+
+If you're stuck, read the `hint` for that exercise below (or press `h` in a
+runner). The exercises follow the chapters of the *Learning Burn* book."""
+
+final_message = """
+That's the sample! More chapters — tensor ops, broadcasting, matmul, autodiff,
+loss functions, backprop and a from-scratch MLP — follow the Learning Burn book.
+"""
+
+# CHAPTER 1 — TENSORS
+
+[[exercises]]
+name = "tensors1"
+dir = "01_tensors"
+test = true
+hint = """
+Rank is part of a Burn tensor's type: `Tensor<B, 1>` (one axis) and
+`Tensor<B, 2>` (two axes) are different, incompatible types.
+
+`one_row` promises to return a `Tensor<Backend, 1>`, but the body builds a
+`Tensor<Backend, 2>`. The five numbers are a single row — one axis of length 5
+— so the tensor is rank 1. Change the `2` in the annotation to a `1`.
+
+Compare with `learning-burn/book-tests/examples/ch1_01_rank_vs_shape.rs`,
+which makes exactly this point."""
