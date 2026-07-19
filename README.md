@@ -58,6 +58,18 @@ Work through `ops1` → `ops6`; they follow the *Learning Burn* book's chapter 2
 One is a compile error, five are logic errors caught by a test. See
 `exercises/02_ops/README.md` for the exercise-to-book map.
 
+## Chapter 3 — matmul & the shape rule (3 exercises)
+
+```bash
+cargo run  --example matmul1
+cargo test --example matmul1
+```
+
+The matrix product and its shape rule (`[m, k] @ [k, n] -> [m, n]`): matmul vs
+element-wise, matrix × vector with `linalg::matvec`, and batched matmul. Work
+through `matmul1` → `matmul3`; they follow the *Learning Burn* book's chapter 3.
+See `exercises/03_matmul/README.md` for the exercise-to-book map.
+
 ## Relationship to Learning Burn
 
 Exercises mirror the runnable examples in the

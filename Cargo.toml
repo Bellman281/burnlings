@@ -69,3 +69,15 @@ path = "exercises/02_ops/ops5.rs"
 [[example]]
 name = "ops6"
 path = "exercises/02_ops/ops6.rs"
+
+[[example]]
+name = "matmul1"
+path = "exercises/03_matmul/matmul1.rs"
+
+[[example]]
+name = "matmul2"
+path = "exercises/03_matmul/matmul2.rs"
+
+[[example]]
+name = "matmul3"
+path = "exercises/03_matmul/matmul3.rs"
