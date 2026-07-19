@@ -12,12 +12,12 @@ Each exercise maps to a runnable example in the *Learning Burn* book's
 
 | Exercise | Concept | Book example |
 |---|---|---|
-| `ops1` | element-wise arithmetic (`*` is not matmul) | `e01_arithmetic` |
-| `ops2` | broadcasting via `unsqueeze()` | `e02_broadcasting` |
-| `ops3` | `reshape` + `slice` (half-open ranges) | `e03_reshaping_slicing` |
-| `ops4` | dimension reductions keep the axis | `e04_reductions` |
-| `ops5` | z-score standardise (std = √var) | `e05_standardize_features` |
-| `ops6` | boolean masks + `mask_where` | `e06_elementwise_masking` |
+| `ops1` | element-wise arithmetic (`*` is not matmul) | `e01_element_wise_arithmetic` |
+| `ops2` | broadcasting via `unsqueeze()` | `e02_broadcasting_with_unsqueeze` |
+| `ops3` | `reshape` + `slice` (half-open ranges) | `e03_reshape_flatten_slice` |
+| `ops4` | dimension reductions keep the axis | `e04_reductions_sum_mean_max` |
+| `ops5` | z-score standardise (std = √var) | `e05_standardising_features` |
+| `ops6` | boolean masks + `mask_where` | `e06_maths_clamp_mask` |
 
 Run one with `cargo run --example ops1`, check it with
 `cargo test --example ops1`. One is a compile error (`ops2`), the other five are
