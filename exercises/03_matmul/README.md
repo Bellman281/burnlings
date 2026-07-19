@@ -11,9 +11,9 @@ Each exercise maps to a runnable example in the *Learning Burn* book's
 
 | Exercise | Concept | Book example |
 |---|---|---|
-| `matmul1` | matrix product vs element-wise `*` | `e01_matmul` |
-| `matmul2` | matrix × vector with `linalg::matvec` | `e02_transpose_matvec_outer` |
-| `matmul3` | batched matmul and its shape rule | `e03_structured_and_batched` |
+| `matmul1` | matrix product vs element-wise `*` | `e01_matrix_multiplication` |
+| `matmul2` | matrix × vector with `linalg::matvec` | `e03_vector_multiplication` |
+| `matmul3` | batched matmul and its shape rule | `e04_identity_triangular_masks_trace` |
 
 Run one with `cargo run --example matmul1`, check it with
 `cargo test --example matmul1`. One is a compile error (`matmul2`), the other
