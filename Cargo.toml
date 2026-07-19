@@ -6,7 +6,7 @@ edition = "2024"
 [dependencies]
 burn = { version = "0.21.0", features = ["ndarray", "autodiff"] }
 
-# Each exercise is registered as an example:
+# Each exercise is registered as an example so learners can run a single one:
 #   cargo run  --example tensors1
 #   cargo test --example tensors1
 
@@ -45,3 +45,27 @@ path = "exercises/01_tensors/tensors8.rs"
 [[example]]
 name = "tensors9"
 path = "exercises/01_tensors/tensors9.rs"
+
+[[example]]
+name = "ops1"
+path = "exercises/02_ops/ops1.rs"
+
+[[example]]
+name = "ops2"
+path = "exercises/02_ops/ops2.rs"
+
+[[example]]
+name = "ops3"
+path = "exercises/02_ops/ops3.rs"
+
+[[example]]
+name = "ops4"
+path = "exercises/02_ops/ops4.rs"
+
+[[example]]
+name = "ops5"
+path = "exercises/02_ops/ops5.rs"
+
+[[example]]
+name = "ops6"
+path = "exercises/02_ops/ops6.rs"
