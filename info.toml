@@ -1,0 +1,120 @@
+format_version = 1
+
+welcome_message = """
+Welcome to Burnlings — small exercises to get you writing deep-learning code
+in Rust with the Burn framework, the same way Rustlings teaches Rust.
+
+Each exercise contains a compiler or logic error. Your job is to fix it.
+Remove the `// I AM NOT DONE` comment once you think you've solved one.
+
+If you're stuck, read the `hint` for that exercise below. The exercises follow
+the chapters of the *Learning Burn* book."""
+
+final_message = """
+That's chapter 1 — tensors. Next chapters (ops & broadcasting, matmul, autodiff,
+losses, backprop, a from-scratch MLP) follow the Learning Burn book.
+"""
+
+# CHAPTER 1 — TENSORS
+
+[[exercises]]
+name = "tensors1"
+dir = "01_tensors"
+test = true
+hint = """
+Rank is part of a Burn tensor's type: `Tensor<B, 1>` (one axis) and
+`Tensor<B, 2>` (two axes) are different, incompatible types.
+
+`one_row` promises to return a `Tensor<Backend, 1>`, but the body builds a
+`Tensor<Backend, 2>`. The five numbers are a single row — one axis of length 5
+— so the tensor is rank 1. Change the `2` in the annotation to a `1`.
+
+Compare book example ch1_01_rank_vs_shape.rs."""
+
+[[exercises]]
+name = "tensors2"
+dir = "01_tensors"
+test = true
+hint = """
+Shape follows nesting. A flat array `[1.0, 2.0, 3.0, 4.0, 5.0, 6.0]` is one
+axis (rank 1). For a 2x3 matrix you need two rows of three:
+`[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]`.
+
+Compare book example ch1_02_basic_creation.rs."""
+
+[[exercises]]
+name = "tensors3"
+dir = "01_tensors"
+test = true
+hint = """
+An integer tensor's kind is the third type parameter: `Tensor<B, D, Int>`.
+The body builds a plain (float) `Tensor<Backend, 1>`, which does not match the
+`Tensor<Backend, 1, Int>` return type. Add the `Int` kind to the annotation:
+`Tensor::<Backend, 1, Int>::from_data(...)`.
+
+Compare book example ch1_03_int_tensors.rs."""
+
+[[exercises]]
+name = "tensors4"
+dir = "01_tensors"
+test = true
+hint = """
+`zeros` fills with 0.0, `ones` with 1.0. The one that fills a shape with a
+value YOU choose is `full`: `Tensor::<Backend, 2>::full([2, 3], 7.0, &device)`.
+
+Compare book example ch1_04_filled_structured.rs."""
+
+[[exercises]]
+name = "tensors5"
+dir = "01_tensors"
+test = true
+hint = """
+`Distribution::Normal(0.0, 1.0)` is a bell curve — its samples are unbounded,
+so many land outside [0, 1) and the bounds check fails. For uniform samples on
+[0, 1), use `Distribution::Default`.
+
+Compare book example ch1_05_random_tensors.rs."""
+
+[[exercises]]
+name = "tensors6"
+dir = "01_tensors"
+test = true
+hint = """
+A Rust array must hold one single type, but the struct mixes `i32`, `i16` and
+`f32`. Cast the integer fields so the whole array is `f32`:
+`[r.sensor_id as f32, r.count as f32, r.voltage]`.
+
+Compare book example ch1_06_from_custom_type.rs."""
+
+[[exercises]]
+name = "tensors7"
+dir = "01_tensors"
+test = true
+hint = """
+`into_data` takes `self`, so it MOVES the tensor — after it, `t` no longer
+exists and the later `println!("{t}")` can't compile. Clone before consuming:
+`let data = t.clone().into_data();` (or do the print before the read).
+
+Compare book example ch1_07_tensor_data_bridge.rs."""
+
+[[exercises]]
+name = "tensors8"
+dir = "01_tensors"
+test = true
+hint = """
+`min`, `max`, `-` and `div` all take their operands by value and move them.
+`t` is used three times and `mn` twice, so you must clone the reused ones:
+`let mn = t.clone().min();`, `let mx = t.clone().max();`,
+`(t - mn.clone()).div(mx - mn)`.
+
+Compare book example ch1_08_ownership_cloning.rs."""
+
+[[exercises]]
+name = "tensors9"
+dir = "01_tensors"
+test = true
+hint = """
+"Close enough" means the largest difference is SMALL, i.e. below the tolerance.
+The comparison is backwards — flip `max_diff > tol` to `max_diff < tol`.
+
+Compare book example ch1_09_display_and_closeness.rs."""

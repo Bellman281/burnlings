@@ -1,0 +1,47 @@
+[package]
+name = "burnlings"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+burn = { version = "0.21.0", features = ["ndarray", "autodiff"] }
+
+# Each exercise is registered as an example:
+#   cargo run  --example tensors1
+#   cargo test --example tensors1
+
+[[example]]
+name = "tensors1"
+path = "exercises/01_tensors/tensors1.rs"
+
+[[example]]
+name = "tensors2"
+path = "exercises/01_tensors/tensors2.rs"
+
+[[example]]
+name = "tensors3"
+path = "exercises/01_tensors/tensors3.rs"
+
+[[example]]
+name = "tensors4"
+path = "exercises/01_tensors/tensors4.rs"
+
+[[example]]
+name = "tensors5"
+path = "exercises/01_tensors/tensors5.rs"
+
+[[example]]
+name = "tensors6"
+path = "exercises/01_tensors/tensors6.rs"
+
+[[example]]
+name = "tensors7"
+path = "exercises/01_tensors/tensors7.rs"
+
+[[example]]
+name = "tensors8"
+path = "exercises/01_tensors/tensors8.rs"
+
+[[example]]
+name = "tensors9"
+path = "exercises/01_tensors/tensors9.rs"
