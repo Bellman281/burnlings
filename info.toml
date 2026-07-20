@@ -216,3 +216,35 @@ get [4, 2, 5] the second operand must be [4, 3, 5]. Fix `b`'s last dimension
 (and keep its middle dim 3 so the inner dims still match).
 
 Compare book example chapter03/e03_structured_and_batched."""
+
+# CHAPTER 4 — NORMS & GRAM
+
+[[exercises]]
+name = "norms1"
+dir = "04_norms"
+test = true
+hint = """
+The L2 norm is the length sqrt(sum of squares), not the plain sum. Use
+`linalg::l2_norm(x, 0)` then `.into_scalar()`. For [3, 4] it's 5, not 7.
+
+Compare book example ch4_01_vector_norm."""
+
+[[exercises]]
+name = "norms2"
+dir = "04_norms"
+test = true
+hint = """
+Divide the vector by its own L2 norm to reach length 1. The shortcut is
+`linalg::vector_normalize(x, 2.0, 0, 1e-12)`. [3, 4] -> [0.6, 0.8].
+
+Compare book example ch4_01_vector_norm."""
+
+[[exercises]]
+name = "gram1"
+dir = "04_norms"
+test = true
+hint = """
+The Gram matrix is X^T X: transpose first, then multiply, in that order. The
+body computes X X^T (shape [3, 3]); use `xt.matmul(x)` for [2, 2].
+
+Compare book example ch4_02_gram_matrix."""

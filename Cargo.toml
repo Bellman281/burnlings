@@ -81,3 +81,15 @@ path = "exercises/03_matmul/matmul2.rs"
 [[example]]
 name = "matmul3"
 path = "exercises/03_matmul/matmul3.rs"
+
+[[example]]
+name = "norms1"
+path = "exercises/04_norms/norms1.rs"
+
+[[example]]
+name = "norms2"
+path = "exercises/04_norms/norms2.rs"
+
+[[example]]
+name = "gram1"
+path = "exercises/04_norms/gram1.rs"
