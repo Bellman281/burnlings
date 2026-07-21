@@ -10,9 +10,9 @@ Each exercise maps to a runnable example in the *Learning Burn* book's
 
 | Exercise | Concept | Book example |
 |---|---|---|
-| `norms1` | L2 (Euclidean) norm | `ch4_01_vector_norm` |
-| `norms2` | normalise to a unit vector | `ch4_01_vector_norm` |
-| `gram1` | Gram matrix `X^T X` | `ch4_02_gram_matrix` |
+| `norms1` | L2 (Euclidean) norm | `e01_the_three_vector_norms` |
+| `norms2` | normalise to a unit vector | `e02_vector_norm_normalize_determinant` |
+| `gram1` | Gram matrix `X^T X` | `e03_gram_matrix` |
 
 Run one with `cargo run --example norms1`, check it with
 `cargo test --example norms1`. All three are logic errors caught by a test.
