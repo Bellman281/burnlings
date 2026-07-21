@@ -10,8 +10,8 @@ Each exercise maps to a runnable example in the *Learning Burn* book's
 
 | Exercise | Concept | Book example |
 |---|---|---|
-| `gd1` | manual gradient descent — fit `y = 2x + 1` → `w = [1, 2]` | `ch6_01_gradient_descent` |
-| `gd2` | MSE gradient via autodiff — loss 41, grad `[-12, -35]` | `ch6_02_autodiff_gradient` |
+| `gd1` | manual gradient descent — fit `y = 2x + 1` → `w = [1, 2]` | `e01_gradient_descent_by_hand` |
+| `gd2` | MSE gradient via autodiff — loss 41, grad `[-12, -35]` | `e02_the_same_gradient_from_autodiff` |
 
 Run one with `cargo run --example gd1`, check it with `cargo test --example gd1`.
 Both are logic errors caught by a test.
