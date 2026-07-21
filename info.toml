@@ -248,3 +248,35 @@ The Gram matrix is X^T X: transpose first, then multiply, in that order. The
 body computes X X^T (shape [3, 3]); use `xt.matmul(x)` for [2, 2].
 
 Compare book example ch4_02_gram_matrix."""
+
+# CHAPTER 5 — AUTODIFF
+
+[[exercises]]
+name = "grad1"
+dir = "05_autodiff"
+test = true
+hint = """
+Autodiff only tracks inputs you opt in. Add `.require_grad()` to `x` so
+`x.grad(&grads)` returns Some(..) instead of None. df/dx of sum(x^2) is 2x.
+
+Compare book example ch5_01_backward_gradient."""
+
+[[exercises]]
+name = "grad2"
+dir = "05_autodiff"
+test = true
+hint = """
+`backward()` returns a container; look up each tensor's own gradient. dL/da is
+`a.grad(&g)`, dL/db is `b.grad(&g)` — the two lookups are swapped.
+
+Compare book example ch5_02_gradient_container."""
+
+[[exercises]]
+name = "grad3"
+dir = "05_autodiff"
+test = true
+hint = """
+For inference, drop the autodiff wrapper with `.inner()`, giving a plain
+base-backend (NdArray) tensor: `x.inner().add_scalar(5.0)`.
+
+Compare book example ch5_03_inner_inference."""

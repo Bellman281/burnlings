@@ -93,3 +93,15 @@ path = "exercises/04_norms/norms2.rs"
 [[example]]
 name = "gram1"
 path = "exercises/04_norms/gram1.rs"
+
+[[example]]
+name = "grad1"
+path = "exercises/05_autodiff/grad1.rs"
+
+[[example]]
+name = "grad2"
+path = "exercises/05_autodiff/grad2.rs"
+
+[[example]]
+name = "grad3"
+path = "exercises/05_autodiff/grad3.rs"
