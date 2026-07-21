@@ -280,3 +280,26 @@ For inference, drop the autodiff wrapper with `.inner()`, giving a plain
 base-backend (NdArray) tensor: `x.inner().add_scalar(5.0)`.
 
 Compare book example ch5_03_inner_inference."""
+
+# CHAPTER 6 — GRADIENT DESCENT
+
+[[exercises]]
+name = "gd1"
+dir = "06_gradient_descent"
+test = true
+hint = """
+Descent steps AGAINST the gradient: subtract `grad * lr` from the weights, don't
+add it. Adding climbs uphill and diverges; subtracting converges to [1, 2].
+
+Compare book example ch6_01_gradient_descent."""
+
+[[exercises]]
+name = "gd2"
+dir = "06_gradient_descent"
+test = true
+hint = """
+MSE is the MEAN squared error — use `.mean()` on the squared residuals, not
+`.sum()`. Summing scales the loss and gradient by n (=4); mean gives loss 41 and
+gradient [-12, -35].
+
+Compare book example ch6_02_autodiff_gradient."""
