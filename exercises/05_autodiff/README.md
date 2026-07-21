@@ -12,9 +12,9 @@ Each exercise maps to a runnable example in the *Learning Burn* book's
 
 | Exercise | Concept | Book example |
 |---|---|---|
-| `grad1` | `require_grad` → `backward` → `grad` (df/dx of sum(x²) = 2x) | `ch5_01_backward_gradient` |
-| `grad2` | one container, look up each gradient (dL/da = b, dL/db = a) | `ch5_02_gradient_container` |
-| `grad3` | `inner()` drops autodiff for inference | `ch5_03_inner_inference` |
+| `grad1` | `require_grad` → `backward` → `grad` (df/dx of sum(x²) = 2x) | `e01_backward_your_first_gradient` |
+| `grad2` | one container, look up each gradient (dL/da = b, dL/db = a) | `e02_the_gradient_container` |
+| `grad3` | `inner()` drops autodiff for inference | `e03_inner_inference_without_tracking` |
 
 Run one with `cargo run --example grad1`, check it with
 `cargo test --example grad1`. `grad1` and `grad2` are logic errors caught by a
