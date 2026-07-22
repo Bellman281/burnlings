@@ -397,3 +397,26 @@ Targets say what each pair should be: +1 similar, -1 dissimilar. Pair 1 nearly
 matches, pair 2 is opposite, so y = [1, -1] (not flipped).
 
 Compare book example chapter08/e06_cosine_embedding."""
+
+# CHAPTER 9 — TRAINING
+
+[[exercises]]
+name = "sgd1"
+dir = "09_training"
+test = true
+hint = """
+Burn's optimizer is functional: `step` consumes the model and returns the
+updated one. Capture it: `model = optim.step(lr, model, grads);`. Without the
+reassignment the model is moved away and the loop won't compile.
+
+Compare book example chapter09/e01 (a real SGD training loop)."""
+
+[[exercises]]
+name = "opt1"
+dir = "09_training"
+test = true
+hint = """
+`with_momentum` takes an `Option<MomentumConfig>` (None = plain SGD). Wrap the
+config: `.with_momentum(Some(MomentumConfig::new()))`.
+
+Compare book example chapter09/e02 (choosing an optimizer)."""
