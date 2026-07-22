@@ -125,3 +125,27 @@ path = "exercises/07_activations/act2.rs"
 [[example]]
 name = "act3"
 path = "exercises/07_activations/act3.rs"
+
+[[example]]
+name = "mse1"
+path = "exercises/08_losses/mse1.rs"
+
+[[example]]
+name = "ce1"
+path = "exercises/08_losses/ce1.rs"
+
+[[example]]
+name = "huber1"
+path = "exercises/08_losses/huber1.rs"
+
+[[example]]
+name = "bce1"
+path = "exercises/08_losses/bce1.rs"
+
+[[example]]
+name = "kldiv1"
+path = "exercises/08_losses/kldiv1.rs"
+
+[[example]]
+name = "cosine1"
+path = "exercises/08_losses/cosine1.rs"
