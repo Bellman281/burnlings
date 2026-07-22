@@ -455,3 +455,38 @@ which cannot separate XOR — the loss stalls near 0.25. Put a nonlinearity
 between them: `let h = self.l1.forward(x).tanh();`.
 
 Compare book example chapter10/e03_learning_xor."""
+
+# CHAPTER 11 — A NETWORK FROM SCRATCH
+
+[[exercises]]
+name = "net1"
+dir = "11_from_scratch"
+test = true
+hint = """
+The body returns `h`, the hidden activations (shape [2, 3]). Apply the output
+layer to get the network output (shape [2, 1]): `h.matmul(w2)`. Return that
+tensor's data instead.
+
+Compare book example chapter11/e01_a_layer_is_a_matmul."""
+
+[[exercises]]
+name = "net2"
+dir = "11_from_scratch"
+test = true
+hint = """
+A weight gradient is the layer INPUT transposed, matmul the incoming error:
+dW1 = xᵀ @ dh_pre. The body uses `x.clone().matmul(dh_pre)` (no transpose), which
+type-checks but is the wrong gradient. Use `x.clone().transpose().matmul(dh_pre)`.
+
+Compare book example chapter11/e02_gradients_by_hand_and_by_autodiff."""
+
+[[exercises]]
+name = "net3"
+dir = "11_from_scratch"
+test = true
+hint = """
+Gradient DESCENT subtracts the gradient: `param <- param - lr * grad`. Every one
+of the four updates uses `+` (that's ascent — the loss climbs). Change each
+`w1.inner() + g1...` to `w1.inner() - g1...`, and the same for b1, w2, b2.
+
+Compare book example chapter11/e03_training_from_scratch."""

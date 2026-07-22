@@ -169,3 +169,15 @@ path = "exercises/10_backprop/bp2.rs"
 [[example]]
 name = "xor1"
 path = "exercises/10_backprop/xor1.rs"
+
+[[example]]
+name = "net1"
+path = "exercises/11_from_scratch/net1.rs"
+
+[[example]]
+name = "net2"
+path = "exercises/11_from_scratch/net2.rs"
+
+[[example]]
+name = "net3"
+path = "exercises/11_from_scratch/net3.rs"
