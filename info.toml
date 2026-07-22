@@ -335,3 +335,65 @@ Softmax over a [batch, classes] tensor must normalise the CLASS axis: dim 1, not
 dim 0. `activation::softmax(logits, 1)`. Dim 0 just yields [1, 1, 1].
 
 Compare book example chapter07/e03_softmax."""
+
+# CHAPTER 8 — LOSSES
+
+[[exercises]]
+name = "mse1"
+dir = "08_losses"
+test = true
+hint = """
+`Reduction::Mean` averages the squared errors (1.5); `Reduction::Sum` adds them
+(6). Use Mean.
+
+Compare book example chapter08/e01_mean_squared_error."""
+
+[[exercises]]
+name = "ce1"
+dir = "08_losses"
+test = true
+hint = """
+Cross-entropy applies softmax internally — pass RAW logits. Softmaxing first
+double-softmaxes and gives the wrong loss.
+
+Compare book example chapter08/e02_cross_entropy."""
+
+[[exercises]]
+name = "huber1"
+dir = "08_losses"
+test = true
+hint = """
+Use `HuberLossConfig::new(1.0)`, not MSE. Huber is the robust loss (0.625 here
+vs MSE's 1.5).
+
+Compare book example chapter08/e03_huber_loss."""
+
+[[exercises]]
+name = "bce1"
+dir = "08_losses"
+test = true
+hint = """
+The inputs are raw logits, so configure `.with_logits(true)` — it fuses the
+sigmoid inside. Without it the logits are misread as probabilities.
+
+Compare book example chapter08/e04_binary_cross_entropy."""
+
+[[exercises]]
+name = "kldiv1"
+dir = "08_losses"
+test = true
+hint = """
+KL divergence wants the prediction as LOG-probabilities: use `log_softmax` (not
+`softmax`) for the student. The target stays `softmax`.
+
+Compare book example chapter08/e05_kl_divergence."""
+
+[[exercises]]
+name = "cosine1"
+dir = "08_losses"
+test = true
+hint = """
+Targets say what each pair should be: +1 similar, -1 dissimilar. Pair 1 nearly
+matches, pair 2 is opposite, so y = [1, -1] (not flipped).
+
+Compare book example chapter08/e06_cosine_embedding."""
