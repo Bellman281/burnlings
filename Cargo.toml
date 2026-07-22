@@ -157,3 +157,15 @@ path = "exercises/09_training/sgd1.rs"
 [[example]]
 name = "opt1"
 path = "exercises/09_training/opt1.rs"
+
+[[example]]
+name = "bp1"
+path = "exercises/10_backprop/bp1.rs"
+
+[[example]]
+name = "bp2"
+path = "exercises/10_backprop/bp2.rs"
+
+[[example]]
+name = "xor1"
+path = "exercises/10_backprop/xor1.rs"

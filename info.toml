@@ -420,3 +420,38 @@ hint = """
 config: `.with_momentum(Some(MomentumConfig::new()))`.
 
 Compare book example chapter09/e02 (choosing an optimizer)."""
+
+# CHAPTER 10 — BACKPROP
+
+[[exercises]]
+name = "bp1"
+dir = "10_backprop"
+test = true
+hint = """
+`v = u.clone()` leaves loss = a*b, so the gradients are just b and a (3 and 2).
+You need loss = (a*b)^2, so square u: `let v = u.clone() * u.clone();`. Then
+dloss/da = 2(a*b)*b = 36 and dloss/db = 2(a*b)*a = 24.
+
+Compare book example chapter10/e01_the_chain_rule_checked_by_hand."""
+
+[[exercises]]
+name = "bp2"
+dir = "10_backprop"
+test = true
+hint = """
+A tensor only accumulates a gradient if it opted in. `w1` is missing
+`.require_grad()`, so `w1.grad(&g)` is `None` and `.unwrap()` panics. Add
+`.require_grad()` to the `w1` definition, exactly like `w2` has it.
+
+Compare book example chapter10/e02_backprop_through_a_hidden_layer."""
+
+[[exercises]]
+name = "xor1"
+dir = "10_backprop"
+test = true
+hint = """
+Two `Linear` layers with nothing between them compose into a single linear map,
+which cannot separate XOR — the loss stalls near 0.25. Put a nonlinearity
+between them: `let h = self.l1.forward(x).tanh();`.
+
+Compare book example chapter10/e03_learning_xor."""
