@@ -149,3 +149,11 @@ path = "exercises/08_losses/kldiv1.rs"
 [[example]]
 name = "cosine1"
 path = "exercises/08_losses/cosine1.rs"
+
+[[example]]
+name = "sgd1"
+path = "exercises/09_training/sgd1.rs"
+
+[[example]]
+name = "opt1"
+path = "exercises/09_training/opt1.rs"
