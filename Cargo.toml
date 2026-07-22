@@ -113,3 +113,15 @@ path = "exercises/06_gradient_descent/gd1.rs"
 [[example]]
 name = "gd2"
 path = "exercises/06_gradient_descent/gd2.rs"
+
+[[example]]
+name = "act1"
+path = "exercises/07_activations/act1.rs"
+
+[[example]]
+name = "act2"
+path = "exercises/07_activations/act2.rs"
+
+[[example]]
+name = "act3"
+path = "exercises/07_activations/act3.rs"
