@@ -535,3 +535,28 @@ Each sub-layer of a transformer block is `LayerNorm(x + sublayer(x))`. The
 second residual is left un-normalised (`x + ff`). Wrap it: `layer_norm(x + ff)`.
 
 Compare book example chapter12/e04_a_transformer_block."""
+
+# CHAPTER 13 — SAVING & RELOADING
+
+[[exercises]]
+name = "save1"
+dir = "13_saving"
+test = true
+hint = """
+After saving, the inference model is created fresh and the weights are never
+loaded back into it, so it predicts from random init. Chain the load onto
+`Model::new(...)`: `.load_file(path, &recorder, &infer_device).expect("load")`.
+
+Compare book example chapter13/e01_train_save_reload_predict."""
+
+[[exercises]]
+name = "prec1"
+dir = "13_saving"
+test = true
+hint = """
+An exact round trip needs full precision. The body saves/loads with
+CompactRecorder (f16), which rounds the weights. Swap in
+`NamedMpkFileRecorder::<FullPrecisionSettings>::new()` (import both from
+`burn::record`).
+
+Compare book example chapter13/e02_same_weights_two_precisions."""
