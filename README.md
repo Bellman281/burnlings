@@ -22,60 +22,56 @@ burnlings/
 ├── exercises/
 │   └── 01_tensors/
 │       ├── tensors1.rs … tensors9.rs   # <- the exercises you solve
-│       └── README.md
+│       └── README.md                   # <- exercise-to-book map for the chapter
 └── solutions/
     └── 01_tensors/
         └── tensors1.rs … tensors9.rs   # <- reference (peek only if stuck)
 ```
 
-## Chapter 1 — tensors (9 exercises)
+## Running an exercise
+
+Every exercise is registered as a Cargo example, so you run and check one by
+name:
 
 ```bash
 cargo run  --example tensors1     # runs it (fails until you fix it)
 cargo test --example tensors1     # checks it with the built-in test
 ```
 
-Every exercise is broken on purpose — it won't pass until you fix it. Five are
-compile errors, four are logic errors caught by a test. Work through
-`tensors1` → `tensors9`; they follow the *Learning Burn* book's chapter 1, one
-concept each (rank, creation, int tensors, filled constructors, random,
-building from a struct, the data bridge, ownership/cloning, float closeness).
-See `exercises/01_tensors/README.md` for the exercise-to-book map.
+When you're stuck, read the `hint` for that exercise in `info.toml`, or open the
+matching file under `solutions/`.
 
-Stuck? Read the `hint` for that exercise in `info.toml`, or open the matching
-file under `solutions/01_tensors/`.
+## Chapters
 
-## Chapter 2 — tensor ops (6 exercises)
+Eleven chapters, **43 exercises**, tracking the *Learning Burn* book one concept
+at a time. Each chapter folder has its own `README.md` with the full
+exercise-to-book map.
 
-```bash
-cargo run  --example ops1
-cargo test --example ops1
-```
+| # | Chapter | Exercises | What you drill |
+|---|---|---|---|
+| 1 | `01_tensors` | `tensors1…9` (9) | rank vs shape, creation, int tensors, filled & random tensors, building from a struct, the data bridge, ownership/cloning, float closeness |
+| 2 | `02_ops` | `ops1…6` (6) | element-wise arithmetic, broadcasting (`unsqueeze`), reshape & slice, reductions, feature standardisation, boolean masking |
+| 3 | `03_matmul` | `matmul1…3` (3) | the shape rule `[m,k]@[k,n]->[m,n]`, matmul vs element-wise, `linalg::matvec`, batched matmul |
+| 4 | `04_norms` | `norms1`, `norms2`, `gram1` (3) | `l2_norm`, `vector_normalize`, and the Gram matrix |
+| 5 | `05_autodiff` | `grad1…3` (3) | `require_grad` / `backward` / `grad`, the autodiff backend |
+| 6 | `06_gradient_descent` | `gd1`, `gd2` (2) | manual gradient descent, then the same MSE gradient via autodiff |
+| 7 | `07_activations` | `act1…3` (3) | the ReLU family, sigmoid & tanh, softmax over the right axis |
+| 8 | `08_losses` | `mse1`, `ce1`, `huber1`, `bce1`, `kldiv1`, `cosine1` (6) | MSE, cross-entropy, Huber, binary cross-entropy, KL divergence, cosine embedding |
+| 9 | `09_training` | `sgd1`, `opt1` (2) | the four-beat training loop, and swapping optimizers |
+| 10 | `10_backprop` | `bp1`, `bp2`, `xor1` (3) | the chain rule by hand, backprop through a hidden layer, learning XOR |
+| 11 | `11_from_scratch` | `net1`, `net2`, `net3` (3) | a layer is a matmul, hand vs autodiff gradients, manual SGD |
 
-Computing with tensors: element-wise arithmetic, broadcasting (`unsqueeze`),
-reshaping and slicing, reductions, feature standardisation, and boolean masking.
-Work through `ops1` → `ops6`; they follow the *Learning Burn* book's chapter 2.
-One is a compile error, five are logic errors caught by a test. See
-`exercises/02_ops/README.md` for the exercise-to-book map.
-
-## Chapter 3 — matmul & the shape rule (3 exercises)
-
-```bash
-cargo run  --example matmul1
-cargo test --example matmul1
-```
-
-The matrix product and its shape rule (`[m, k] @ [k, n] -> [m, n]`): matmul vs
-element-wise, matrix × vector with `linalg::matvec`, and batched matmul. Work
-through `matmul1` → `matmul3`; they follow the *Learning Burn* book's chapter 3.
-See `exercises/03_matmul/README.md` for the exercise-to-book map.
+Work through them in order — each chapter assumes the one before. Some exercises
+are compile errors, others are logic errors caught by a test; a few are the
+"compiles fine but silently wrong" traps the book warns about.
 
 ## Relationship to Learning Burn
 
 Exercises mirror the runnable examples in the
-[Learning Burn](https://github.com/jhosein58/learning-burn) book's
-`book-tests/examples/`. Chapter 1 (`tensors1` here) corresponds to
-`ch1_01_rank_vs_shape.rs`: rank is part of a Burn tensor's type.
+[Learning Burn](https://github.com/jhosein58/learning-burn) book. For example,
+chapter 1's `tensors1` corresponds to the book's `rank_vs_shape` example: rank
+is part of a Burn tensor's type. Each chapter's `README.md` lists the full
+exercise-to-example mapping.
 
 ## Credit
 
