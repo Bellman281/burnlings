@@ -490,3 +490,48 @@ of the four updates uses `+` (that's ascent — the loss climbs). Change each
 `w1.inner() + g1...` to `w1.inner() - g1...`, and the same for b1, w2, b2.
 
 Compare book example chapter11/e03_training_from_scratch."""
+
+# CHAPTER 12 — ATTENTION & TRANSFORMERS
+
+[[exercises]]
+name = "attn1"
+dir = "12_attention"
+test = true
+hint = """
+Attention scales the scores by 1/sqrt(d_k) before the softmax to keep the dot
+products from blowing up with dimension. The body skips it. Chain
+`.mul_scalar(1.0 / d_k.sqrt())` onto `q.matmul(k.transpose())`.
+
+Compare book example chapter12/e01_scaled_dot_product_attention."""
+
+[[exercises]]
+name = "attn2"
+dir = "12_attention"
+test = true
+hint = """
+The causal mask must push FUTURE positions to ~0 weight, which means adding a
+large NEGATIVE number before the softmax. The mask uses +1e9 (which does the
+opposite). Change it to -1.0e9.
+
+Compare book example chapter12/e02_causal_masking."""
+
+[[exercises]]
+name = "attn3"
+dir = "12_attention"
+test = true
+hint = """
+The scores tensor is [heads, seq, seq]; attention normalises over the KEYS, the
+last dim. `softmax(scores, 1)` uses the wrong axis, so the weights no longer sum
+to 1. Use `softmax(scores, 2)`.
+
+Compare book example chapter12/e03_multi_head_attention."""
+
+[[exercises]]
+name = "attn4"
+dir = "12_attention"
+test = true
+hint = """
+Each sub-layer of a transformer block is `LayerNorm(x + sublayer(x))`. The
+second residual is left un-normalised (`x + ff`). Wrap it: `layer_norm(x + ff)`.
+
+Compare book example chapter12/e04_a_transformer_block."""

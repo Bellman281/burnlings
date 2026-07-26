@@ -181,3 +181,19 @@ path = "exercises/11_from_scratch/net2.rs"
 [[example]]
 name = "net3"
 path = "exercises/11_from_scratch/net3.rs"
+
+[[example]]
+name = "attn1"
+path = "exercises/12_attention/attn1.rs"
+
+[[example]]
+name = "attn2"
+path = "exercises/12_attention/attn2.rs"
+
+[[example]]
+name = "attn3"
+path = "exercises/12_attention/attn3.rs"
+
+[[example]]
+name = "attn4"
+path = "exercises/12_attention/attn4.rs"
