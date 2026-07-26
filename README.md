@@ -43,8 +43,8 @@ matching file under `solutions/`.
 
 ## Chapters
 
-Eleven chapters, **43 exercises**, tracking the *Learning Burn* book one concept
-at a time. Each chapter folder has its own `README.md` with the full
+Fourteen chapters, **53 exercises**, tracking the *Learning Burn* book one
+concept at a time. Each chapter folder has its own `README.md` with the full
 exercise-to-book map.
 
 | # | Chapter | Exercises | What you drill |
@@ -60,6 +60,9 @@ exercise-to-book map.
 | 9 | `09_training` | `sgd1`, `opt1` (2) | the four-beat training loop, and swapping optimizers |
 | 10 | `10_backprop` | `bp1`, `bp2`, `xor1` (3) | the chain rule by hand, backprop through a hidden layer, learning XOR |
 | 11 | `11_from_scratch` | `net1`, `net2`, `net3` (3) | a layer is a matmul, hand vs autodiff gradients, manual SGD |
+| 12 | `12_attention` | `attn1…4` (4) | scaled dot-product attention, causal masking, multi-head attention, a transformer block |
+| 13 | `13_saving` | `save1`, `prec1` (2) | train → save → reload → predict, and recorder precision (f32 vs f16) |
+| 14 | `14_deploy` | `bytes1`, `generic1`, `quant1`, `count1` (4) | weights in RAM as bytes, backend-generic inference, int8 quantization, model footprint |
 
 Work through them in order — each chapter assumes the one before. Some exercises
 are compile errors, others are logic errors caught by a test; a few are the
