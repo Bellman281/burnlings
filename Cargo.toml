@@ -197,3 +197,11 @@ path = "exercises/12_attention/attn3.rs"
 [[example]]
 name = "attn4"
 path = "exercises/12_attention/attn4.rs"
+
+[[example]]
+name = "save1"
+path = "exercises/13_saving/save1.rs"
+
+[[example]]
+name = "prec1"
+path = "exercises/13_saving/prec1.rs"
