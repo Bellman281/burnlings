@@ -560,3 +560,48 @@ CompactRecorder (f16), which rounds the weights. Swap in
 `burn::record`).
 
 Compare book example chapter13/e02_same_weights_two_precisions."""
+
+# CHAPTER 14 — DEPLOYMENT & QUANTIZATION
+
+[[exercises]]
+name = "bytes1"
+dir = "14_deploy"
+test = true
+hint = """
+The record is loaded from the bytes but never applied — a fresh model is used
+instead. Apply it: `Model::<MyBackend>::new(&device).load_record(record)`, and
+predict with that model.
+
+Compare book example chapter14/e01_weights_baked_into_the_binary."""
+
+[[exercises]]
+name = "generic1"
+dir = "14_deploy"
+test = true
+hint = """
+The call site says `run_inference::<NdArray>()`, but the function isn't generic,
+so it takes no type parameter. Make it generic:
+`fn run_inference<B: Backend>(device: &B::Device) -> Tensor<B, 2>` and use `B`
+(and `Default::default()` for the device) throughout.
+
+Compare book example chapter14/e02_inference_generic_over_the_backend."""
+
+[[exercises]]
+name = "quant1"
+dir = "14_deploy"
+test = true
+hint = """
+`(w / scale) as i8` truncates toward zero, so 52.9 becomes 52 instead of 53.
+Quantisation rounds to nearest: `(w / scale).round() as i8`.
+
+Compare book example chapter14/e03_int8_quantisation_by_hand."""
+
+[[exercises]]
+name = "count1"
+dir = "14_deploy"
+test = true
+hint = """
+An f16 value is 2 bytes, not 4. The f16 footprint is computed with `params * 4`
+(the f32 factor); change it to `params * 2`.
+
+Compare book example chapter14/e04_counting_parameters_and_bytes."""
