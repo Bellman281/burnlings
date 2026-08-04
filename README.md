@@ -19,6 +19,7 @@ on. Metadata (order, hints, whether an exercise is checked by a test) lives in
 burnlings/
 ├── Cargo.toml            # burn 0.21.0, flex (CPU) + autodiff backend
 ├── info.toml             # exercise list + hints (Rustlings format)
+├── cli/                  # the `burnlings` runner (no burn dependency)
 ├── exercises/
 │   └── 01_tensors/
 │       ├── tensors1.rs … tensors9.rs   # <- the exercises you solve
@@ -28,21 +29,28 @@ burnlings/
         └── tensors1.rs … tensors9.rs   # <- reference (peek only if stuck)
 ```
 
-## Backend
+## The runner
 
-Exercises run on [`burn-flex`](https://crates.io/crates/burn-flex), Burn's
-pure-Rust CPU backend (`features = ["flex", "autodiff"]`). Flex is what Burn
-recommends for new projects — `burn-ndarray` is kept for compatibility but is
-marked *legacy — prefer flex* in Burn's own docs. Flex needs no BLAS or C
-toolchain, so `cargo test --example ...` works the same on Linux, macOS and
-Windows.
+`cargo run --example <name>` works, but you have to know the name. The runner
+picks the exercise for you:
 
-Nothing in the exercises is Flex-specific: every file declares its backend in
-one place (`type Backend = Flex;`), so you can point them at another backend —
-`Wgpu`, `Cuda`, `NdArray` — by changing that line and the Cargo feature. Note
-that a backend picks its own default int element type (Flex uses `i32`,
-NdArray `i64`), so read integer tensor data with `TensorData::iter::<T>()`,
-which converts, rather than `as_slice::<T>()`, which requires an exact match.
+```bash
+cargo run -p burnlings-cli -- next     # or: cargo install --path cli && burnlings next
+```
+
+```text
+burnlings next            # run the first unsolved exercise
+burnlings watch           # re-run it every time you save; advances when you solve it
+burnlings list            # every exercise, by chapter, with done/not-done
+burnlings run ten3        # exact name, prefix, or loose match -> tensors3
+burnlings hint            # hint for the current exercise
+burnlings completions bash # shell completion for the runner itself
+```
+
+An exercise counts as done once you delete its `// I AM NOT DONE` comment, so
+`next` and `watch` follow your progress without any extra state file. The
+runner is a separate workspace member that does **not** depend on `burn`, so it
+builds in seconds and keeps working while an exercise doesn't compile.
 
 ## Running an exercise
 
