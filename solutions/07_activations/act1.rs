@@ -2,10 +2,10 @@
 // ReLU = max(0, x): it flattens EVERY negative value to zero. (Leaky ReLU keeps
 // a small slope for negatives; ReLU does not.)
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Tensor, activation};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn rectify() -> Vec<f32> {
     let device = Default::default();

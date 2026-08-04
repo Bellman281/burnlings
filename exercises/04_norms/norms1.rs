@@ -12,10 +12,10 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Tensor, linalg};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn magnitude() -> f32 {
     let device = Default::default();

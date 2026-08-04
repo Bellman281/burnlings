@@ -3,11 +3,11 @@
 // formulas, and they match autodiff exactly. The MSE derivative carries a (2/N)
 // factor: dloss/dout = (2/N)(out - t). Miss it and the hand gradients are wrong.
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::tensor::activation::relu;
 use burn::tensor::Tensor;
 
-type Backend = Autodiff<NdArray>;
+type Backend = Autodiff<Flex>;
 
 // Largest absolute difference between the by-hand gradient and autodiff's.
 fn manual_vs_autodiff_gap() -> f32 {

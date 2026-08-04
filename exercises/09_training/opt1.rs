@@ -10,12 +10,12 @@
 //
 // I AM NOT DONE
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::nn::Linear;
 use burn::optim::momentum::MomentumConfig;
 use burn::optim::SgdConfig;
 
-type B = Autodiff<NdArray>;
+type B = Autodiff<Flex>;
 
 fn build_sgd_with_momentum() {
     // ⬇️ `with_momentum` wants an Option — a bare MomentumConfig won't compile

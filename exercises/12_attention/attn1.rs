@@ -14,11 +14,11 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::activation::softmax;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn attention() -> Vec<f32> {
     let device = Default::default();

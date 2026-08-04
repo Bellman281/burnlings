@@ -14,7 +14,7 @@
 //
 // I AM NOT DONE
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::module::Module;
 use burn::nn::loss::{MseLoss, Reduction};
 use burn::nn::{Linear, LinearConfig};
@@ -23,8 +23,8 @@ use burn::record::CompactRecorder;
 use burn::tensor::backend::Backend;
 use burn::tensor::Tensor;
 
-type Train = Autodiff<NdArray>;
-type Infer = NdArray;
+type Train = Autodiff<Flex>;
+type Infer = Flex;
 
 #[derive(Module, Debug)]
 struct Model<B: Backend> {

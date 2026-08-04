@@ -3,11 +3,11 @@
 // what each pair SHOULD be: +1 = similar (point the same way), -1 = dissimilar.
 // With the correct targets here the loss is ~0.003.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::nn::loss::CosineEmbeddingLossConfig;
 use burn::tensor::{Int, Tensor};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn loss() -> f32 {
     let device = Default::default();

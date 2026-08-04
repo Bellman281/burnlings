@@ -2,11 +2,11 @@
 //
 //      Attention(Q, K, V) = softmax( Q Kᵀ / sqrt(d_k) ) V
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::activation::softmax;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn attention() -> Vec<f32> {
     let device = Default::default();

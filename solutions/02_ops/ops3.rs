@@ -2,10 +2,10 @@
 // `reshape` lays a flat range into a matrix; `slice` takes a rectangular block
 // with half-open ranges [start..end) per axis.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Int, Tensor};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn block() -> Tensor<Backend, 2, Int> {
     let device = Default::default();
@@ -26,7 +26,9 @@ mod tests {
     fn slices_the_middle_block() {
         let out = block();
         assert_eq!(out.dims(), [2, 2]);
-        let v: Vec<i64> = out.into_data().to_vec().unwrap();
+        // `iter::<i64>()` converts on read: backend-independent assertion.
+        let d = out.into_data();
+        let v: Vec<i64> = d.iter::<i64>().collect();
         assert_eq!(v, vec![1, 2, 5, 6]);
     }
 }

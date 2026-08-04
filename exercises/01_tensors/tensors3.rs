@@ -9,10 +9,10 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Int, Tensor, TensorData};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn ids() -> Tensor<Backend, 1, Int> {
     let device = Default::default();
@@ -32,8 +32,10 @@ mod tests {
     fn is_int_rank1_len3() {
         let t = ids();
         assert_eq!(t.dims(), [3]);
+        // `iter::<i64>()` converts on read, so this assertion holds on any
+        // backend regardless of its native int element type (Flex: i32).
         let d = t.into_data();
-        let v: &[i64] = d.as_slice().unwrap();
+        let v: Vec<i64> = d.iter::<i64>().collect();
         assert_eq!(v, [10, 20, 30]);
     }
 }

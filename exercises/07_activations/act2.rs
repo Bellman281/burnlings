@@ -10,10 +10,10 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Tensor, activation};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn squash() -> Vec<f32> {
     let device = Default::default();

@@ -1,14 +1,14 @@
 // grad3.rs — SOLUTION · Chapter 5: Autodiff
 // There is no `no_grad` block in Burn. For inference, call `.inner()` to peel
 // the autodiff wrapper off and drop to the plain base backend (no graph, no
-// tracking). Note the RETURN type is the base backend `NdArray`, not `Autodiff`.
+// tracking). Note the RETURN type is the base backend `Flex`, not `Autodiff`.
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::tensor::Tensor;
 
-type Backend = Autodiff<NdArray>;
+type Backend = Autodiff<Flex>;
 
-fn infer() -> Tensor<NdArray, 1> {
+fn infer() -> Tensor<Flex, 1> {
     let device = Default::default();
     let x = Tensor::<Backend, 1>::from_floats([1.0, 2.0, 3.0], &device);
     // drop autodiff, then do the cheap inference op

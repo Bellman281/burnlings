@@ -2,10 +2,10 @@
 // The Gram matrix of a design matrix X ([n_samples, n_features]) is X^T X: you
 // transpose FIRST, then multiply. Order matters — X X^T is a different shape.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn gram() -> Tensor<Backend, 2> {
     let device = Default::default();

@@ -2,10 +2,10 @@
 // Burn's `backward()` returns ALL gradients in one container; you look each up
 // by the tensor it belongs to. For L = sum(a * b): dL/da = b, dL/db = a.
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::tensor::Tensor;
 
-type Backend = Autodiff<NdArray>;
+type Backend = Autodiff<Flex>;
 
 fn grads() -> (Vec<f32>, Vec<f32>) {
     let device = Default::default();

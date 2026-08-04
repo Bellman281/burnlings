@@ -15,13 +15,13 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::nn::{Linear, LinearConfig};
 use burn::tensor::activation::{relu, softmax};
 use burn::tensor::backend::Backend as _;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 // LayerNorm over the last dimension: zero mean, unit variance per token row.
 fn layer_norm(x: Tensor<Backend, 2>) -> Tensor<Backend, 2> {

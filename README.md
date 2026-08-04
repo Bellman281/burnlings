@@ -17,7 +17,7 @@ on. Metadata (order, hints, whether an exercise is checked by a test) lives in
 
 ```
 burnlings/
-├── Cargo.toml            # burn 0.21.0, ndarray + autodiff backend
+├── Cargo.toml            # burn 0.21.0, flex (CPU) + autodiff backend
 ├── info.toml             # exercise list + hints (Rustlings format)
 ├── cli/                  # the `burnlings` runner (no burn dependency)
 ├── exercises/
@@ -64,6 +64,41 @@ cargo test --example tensors1     # checks it with the built-in test
 
 When you're stuck, read the `hint` for that exercise in `info.toml`, or open the
 matching file under `solutions/`.
+
+## Finding an exercise
+
+Exercise names are Cargo example names, so cargo itself will list them — run
+`cargo run --example` with no name and it prints all 53 (alphabetically, not in
+chapter order):
+
+```bash
+cargo run --example
+```
+
+For tab completion, source the script for your shell from the repo:
+
+```bash
+source scripts/burnlings-completion.bash   # bash
+source scripts/burnlings-completion.zsh    # zsh
+```
+
+```bash
+cargo run --example ten<TAB>    # -> tensors1 … tensors9
+```
+
+The names come from `Cargo.toml`, so the completion stays correct as exercises
+are added. It works from any subdirectory of the repo, and only affects
+completion after `--example`.
+
+Cargo is growing its own native completion, which would cover `--example`
+without this script, but it is nightly-only for now
+([rust-lang/cargo#14520](https://github.com/rust-lang/cargo/issues/14520),
+stabilization gated on [clap-rs/clap#3166](https://github.com/clap-rs/clap/issues/3166)).
+On nightly:
+
+```bash
+source <(CARGO_COMPLETE=bash cargo +nightly)
+```
 
 ## Chapters
 

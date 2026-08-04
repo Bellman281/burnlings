@@ -2,11 +2,11 @@
 //
 // Causal masking: add -1e9 to every future score before the softmax.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::activation::softmax;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn masked_attention() -> Vec<f32> {
     let device = Default::default();

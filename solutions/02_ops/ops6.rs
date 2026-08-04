@@ -2,10 +2,10 @@
 // A comparison builds a boolean mask; `mask_where` keeps the original where the
 // mask is FALSE and takes the replacement where the mask is TRUE.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn replace_positives() -> Tensor<Backend, 1> {
     let device = Default::default();

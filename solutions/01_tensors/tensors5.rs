@@ -2,10 +2,10 @@
 // `Distribution::Default` is uniform on [0, 1). `Distribution::Normal(m, s)`
 // is a bell curve whose values are NOT bounded to [0, 1).
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Distribution, Tensor};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn uniform_sample() -> Tensor<Backend, 1> {
     let device = Default::default();

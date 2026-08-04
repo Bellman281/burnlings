@@ -1,10 +1,10 @@
 // ops1.rs — SOLUTION · Chapter 2: Tensor Ops
 // `*` on two tensors is ELEMENT-WISE, not matrix multiplication.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn products() -> Tensor<Backend, 1> {
     let device = Default::default();

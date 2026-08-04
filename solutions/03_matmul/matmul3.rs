@@ -3,10 +3,10 @@
 // batch, the last two are the matrices. [b, m, k] @ [b, k, n] -> [b, m, n], and
 // the inner dims (k) must match.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn batched() -> Tensor<Backend, 3> {
     let device = Default::default();

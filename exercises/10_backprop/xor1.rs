@@ -10,7 +10,7 @@
 //
 // I AM NOT DONE
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::module::Module;
 use burn::nn::loss::{MseLoss, Reduction};
 use burn::nn::{Linear, LinearConfig};
@@ -18,7 +18,7 @@ use burn::optim::{GradientsParams, Optimizer, SgdConfig};
 use burn::tensor::backend::Backend;
 use burn::tensor::Tensor;
 
-type MyBackend = Autodiff<NdArray>;
+type MyBackend = Autodiff<Flex>;
 
 #[derive(Module, Debug)]
 struct Mlp<B: Backend> {

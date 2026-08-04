@@ -3,11 +3,11 @@
 // large ones, so a single outlier can't dominate. With delta = 1.0 on this data
 // it is 0.625 — smaller than the MSE (1.5), because the outlier is down-weighted.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::nn::loss::{HuberLossConfig, Reduction};
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn loss() -> f32 {
     let device = Default::default();

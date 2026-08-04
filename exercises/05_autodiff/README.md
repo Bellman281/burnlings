@@ -1,7 +1,7 @@
 # Chapter 5 — Autodiff
 
 Gradients — the reason a deep-learning framework exists. In Burn, autodiff is a
-backend *decorator*: `Autodiff<NdArray>` wraps a backend so it records a
+backend *decorator*: `Autodiff<Flex>` wraps a backend so it records a
 computation graph. You opt an input in with `.require_grad()`, call
 `.backward()` on the output, and read each gradient back out of the container it
 returns. For inference you peel the wrapper off with `.inner()` and drop to the

@@ -7,7 +7,7 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-burn = { version = "0.21.0", features = ["ndarray", "autodiff"] }
+burn = { version = "0.21.0", features = ["flex", "autodiff"] }
 
 # Each exercise is registered as an example so learners can run a single one:
 #   cargo run  --example tensors1

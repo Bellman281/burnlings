@@ -3,12 +3,12 @@
 // `SgdConfig::new().with_momentum(Some(MomentumConfig::new()))` — note the
 // momentum is wrapped in `Some`, because `with_momentum` takes an `Option`.
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::nn::Linear;
 use burn::optim::momentum::MomentumConfig;
 use burn::optim::SgdConfig;
 
-type B = Autodiff<NdArray>;
+type B = Autodiff<Flex>;
 
 fn build_sgd_with_momentum() {
     let _optim = SgdConfig::new()

@@ -3,11 +3,11 @@
 // inputs are RAW logits and applies the sigmoid internally (fused, stable). Feed
 // it logits directly. On this data the loss is ~0.294.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::nn::loss::BinaryCrossEntropyLossConfig;
 use burn::tensor::{Int, Tensor};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn loss() -> f32 {
     let device = Default::default();

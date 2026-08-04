@@ -2,13 +2,13 @@
 //
 // Multi-head attention: softmax normalises over the keys (the last dim, 2).
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::nn::{Linear, LinearConfig};
 use burn::tensor::activation::softmax;
 use burn::tensor::backend::Backend as _;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn multi_head() -> (Vec<usize>, Vec<usize>, Vec<f32>) {
     let device = Default::default();

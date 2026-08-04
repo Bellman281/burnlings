@@ -2,10 +2,10 @@
 // Z-score standardisation: subtract the per-feature mean, divide by the
 // per-feature standard DEVIATION (the square root of the variance).
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn standardize() -> Tensor<Backend, 2> {
     let device = Default::default();
