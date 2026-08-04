@@ -2,10 +2,10 @@
 // A Rust array must be homogeneous. To pack mixed-typed struct fields into one
 // float tensor, cast each field to f32 first.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Tensor, TensorData};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 struct Reading {
     sensor_id: i32,

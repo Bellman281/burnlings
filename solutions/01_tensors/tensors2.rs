@@ -2,10 +2,10 @@
 // A NESTED array gives you a rank-2 tensor. A flat array is rank 1, and
 // asking for shape [2, 3] from 6 flat values is not the same thing.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn matrix() -> Tensor<Backend, 2> {
     let device = Default::default();

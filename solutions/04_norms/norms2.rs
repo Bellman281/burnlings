@@ -2,10 +2,10 @@
 // Normalising a vector scales it to length 1 by dividing by its L2 norm.
 // [3, 4] has length 5, so the unit vector is [0.6, 0.8].
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Tensor, linalg};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn unit() -> Tensor<Backend, 1> {
     let device = Default::default();

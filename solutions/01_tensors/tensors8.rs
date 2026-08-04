@@ -2,10 +2,10 @@
 // Tensor arithmetic CONSUMES its operands. When a tensor is used more than
 // once, clone it. This is min-max normalisation to [0, 1].
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn normalize() -> Tensor<Backend, 1> {
     let device = Default::default();

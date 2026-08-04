@@ -3,10 +3,10 @@
 // The five numbers are one axis of length 5, so the tensor is RANK 1.
 // The only change needed was the rank in the type annotation: 2 -> 1.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn one_row() -> Tensor<Backend, 1> {
     let device = Default::default();

@@ -2,10 +2,10 @@
 // Backprop IS the chain rule run backwards. loss = (a*b)^2 with a=2, b=3.
 // dloss/da = 2(a*b)*b = 2*6*3 = 36; dloss/db = 2(a*b)*a = 2*6*2 = 24.
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::tensor::Tensor;
 
-type Backend = Autodiff<NdArray>;
+type Backend = Autodiff<Flex>;
 
 fn grads() -> (f32, f32) {
     let device = Default::default();

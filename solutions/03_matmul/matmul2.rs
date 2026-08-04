@@ -2,10 +2,10 @@
 // A matrix times a vector is a matrix-vector product. `matmul` wants two rank-2
 // tensors; for M·v use `linalg::matvec(matrix, vector)`.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Tensor, linalg};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn mat_vec() -> Tensor<Backend, 1> {
     let device = Default::default();

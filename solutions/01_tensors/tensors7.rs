@@ -2,10 +2,10 @@
 // `into_data` CONSUMES the tensor. If you still need the tensor afterwards,
 // clone it first (`t.clone().into_data()`), or read the data last.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn sum_via_slice() -> f32 {
     let device = Default::default();

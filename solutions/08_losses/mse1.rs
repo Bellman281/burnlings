@@ -2,11 +2,11 @@
 // Mean Squared Error with `Reduction::Mean` averages the squared errors.
 // Squared errors here are [1, 1, 0, 4]; their mean is 1.5 (their sum is 6).
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::nn::loss::{MseLoss, Reduction};
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn loss() -> f32 {
     let device = Default::default();

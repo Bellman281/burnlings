@@ -2,10 +2,10 @@
 // Floats are rarely exactly equal. You compare tensors by checking the largest
 // element-wise difference against a tolerance (this is what check_closeness does).
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn within_tolerance() -> bool {
     let device = Default::default();

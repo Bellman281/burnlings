@@ -12,10 +12,10 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn col_sums() -> Tensor<Backend, 2> {
     let device = Default::default();

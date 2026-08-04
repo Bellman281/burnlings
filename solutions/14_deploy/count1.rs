@@ -2,12 +2,12 @@
 //
 // f16 is 2 bytes per value: f16 bytes = params * 2.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::module::Module;
 use burn::nn::{Linear, LinearConfig};
 use burn::tensor::backend::Backend;
 
-type MyBackend = NdArray;
+type MyBackend = Flex;
 
 #[derive(Module, Debug)]
 struct Mlp<B: Backend> {

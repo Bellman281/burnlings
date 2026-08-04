@@ -17,7 +17,7 @@ on. Metadata (order, hints, whether an exercise is checked by a test) lives in
 
 ```
 burnlings/
-├── Cargo.toml            # burn 0.21.0, ndarray + autodiff backend
+├── Cargo.toml            # burn 0.21.0, flex (CPU) + autodiff backend
 ├── info.toml             # exercise list + hints (Rustlings format)
 ├── exercises/
 │   └── 01_tensors/
@@ -27,6 +27,22 @@ burnlings/
     └── 01_tensors/
         └── tensors1.rs … tensors9.rs   # <- reference (peek only if stuck)
 ```
+
+## Backend
+
+Exercises run on [`burn-flex`](https://crates.io/crates/burn-flex), Burn's
+pure-Rust CPU backend (`features = ["flex", "autodiff"]`). Flex is what Burn
+recommends for new projects — `burn-ndarray` is kept for compatibility but is
+marked *legacy — prefer flex* in Burn's own docs. Flex needs no BLAS or C
+toolchain, so `cargo test --example ...` works the same on Linux, macOS and
+Windows.
+
+Nothing in the exercises is Flex-specific: every file declares its backend in
+one place (`type Backend = Flex;`), so you can point them at another backend —
+`Wgpu`, `Cuda`, `NdArray` — by changing that line and the Cargo feature. Note
+that a backend picks its own default int element type (Flex uses `i32`,
+NdArray `i64`), so read integer tensor data with `TensorData::iter::<T>()`,
+which converts, rather than `as_slice::<T>()`, which requires an exact match.
 
 ## Running an exercise
 

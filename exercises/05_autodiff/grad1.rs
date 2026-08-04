@@ -1,6 +1,6 @@
 // grad1.rs — Burnlings · Chapter 5: Autodiff
 //
-// `Autodiff<NdArray>` is a backend DECORATOR: wrap a backend and it can track a
+// `Autodiff<Flex>` is a backend DECORATOR: wrap a backend and it can track a
 // computation graph. But it only tracks the inputs you explicitly opt in with
 // `.require_grad()`. Without that, there is no gradient to look up — `x.grad(..)`
 // returns `None`, and the `.unwrap()` below panics.
@@ -12,10 +12,10 @@
 //
 // I AM NOT DONE
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::tensor::Tensor;
 
-type Backend = Autodiff<NdArray>;
+type Backend = Autodiff<Flex>;
 
 fn gradient() -> Vec<f32> {
     let device = Default::default();

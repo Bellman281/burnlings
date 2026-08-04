@@ -2,10 +2,10 @@
 // Dimension reductions take the axis to collapse. `sum_dim(0)` sums DOWN each
 // column. Burn keeps the reduced axis, so a [2, 2] summed on dim 0 is [1, 2].
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn col_sums() -> Tensor<Backend, 2> {
     let device = Default::default();

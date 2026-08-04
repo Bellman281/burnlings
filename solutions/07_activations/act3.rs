@@ -3,10 +3,10 @@
 // [batch, classes] tensor you MUST normalise over the class axis (dim 1).
 // Normalising over the batch (dim 0) compiles fine but is wrong.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Tensor, activation};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn probs() -> Vec<f32> {
     let device = Default::default();

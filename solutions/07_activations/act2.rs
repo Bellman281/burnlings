@@ -3,10 +3,10 @@
 // (-1, 1) and gives 0 at x = 0 — a different curve.) Note: sigmoid lives only in
 // `activation::sigmoid` — there is no `.sigmoid()` method on a tensor.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Tensor, activation};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn squash() -> Vec<f32> {
     let device = Default::default();

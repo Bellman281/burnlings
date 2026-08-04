@@ -277,7 +277,7 @@ dir = "05_autodiff"
 test = true
 hint = """
 For inference, drop the autodiff wrapper with `.inner()`, giving a plain
-base-backend (NdArray) tensor: `x.inner().add_scalar(5.0)`.
+base-backend (Flex) tensor: `x.inner().add_scalar(5.0)`.
 
 Compare book example ch5_03_inner_inference."""
 
@@ -579,7 +579,7 @@ name = "generic1"
 dir = "14_deploy"
 test = true
 hint = """
-The call site says `run_inference::<NdArray>()`, but the function isn't generic,
+The call site says `run_inference::<Flex>()`, but the function isn't generic,
 so it takes no type parameter. Make it generic:
 `fn run_inference<B: Backend>(device: &B::Device) -> Tensor<B, 2>` and use `B`
 (and `Default::default()` for the device) throughout.

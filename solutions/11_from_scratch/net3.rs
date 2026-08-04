@@ -4,11 +4,11 @@
 // `inner()` drops to the base backend for the arithmetic; `from_inner(..)
 // .require_grad()` lifts the result back to a trainable leaf. Learns XOR. (Seeded.)
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::tensor::backend::Backend;
 use burn::tensor::{Distribution, Tensor};
 
-type B = Autodiff<NdArray>;
+type B = Autodiff<Flex>;
 
 fn final_loss() -> f32 {
     let device = Default::default();

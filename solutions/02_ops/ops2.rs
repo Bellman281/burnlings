@@ -2,10 +2,10 @@
 // Burn will not broadcast a rank-1 vector against a rank-2 matrix implicitly.
 // Raise the vector to [1, 3] with `unsqueeze()`; then it broadcasts over rows.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn add_bias() -> Tensor<Backend, 2> {
     let device = Default::default();

@@ -2,10 +2,10 @@
 // `matmul` is the real matrix product: [m, k] @ [k, n] -> [m, n]. Element-wise
 // `*` is a different operation (and here the shapes don't even line up for it).
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn product() -> Tensor<Backend, 2> {
     let device = Default::default();
