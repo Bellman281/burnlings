@@ -1,12 +1,12 @@
 // grad1.rs — SOLUTION · Chapter 5: Autodiff
-// `Autodiff<NdArray>` wraps a backend so it can track a graph. Mark the inputs
+// `Autodiff<Flex>` wraps a backend so it can track a graph. Mark the inputs
 // you want gradients for with `.require_grad()`, call `.backward()` on the
 // output, then look up each gradient. For f = sum(x^2), df/dx = 2x.
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::tensor::Tensor;
 
-type Backend = Autodiff<NdArray>;
+type Backend = Autodiff<Flex>;
 
 fn gradient() -> Vec<f32> {
     let device = Default::default();

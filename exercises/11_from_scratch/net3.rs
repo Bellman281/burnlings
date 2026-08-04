@@ -9,11 +9,11 @@
 //
 // I AM NOT DONE
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::tensor::backend::Backend;
 use burn::tensor::{Distribution, Tensor};
 
-type B = Autodiff<NdArray>;
+type B = Autodiff<Flex>;
 
 fn final_loss() -> f32 {
     let device = Default::default();

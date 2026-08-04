@@ -9,10 +9,10 @@
 //
 // I AM NOT DONE
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::tensor::Tensor;
 
-type Backend = Autodiff<NdArray>;
+type Backend = Autodiff<Flex>;
 
 fn grads() -> (f32, f32) {
     let device = Default::default();

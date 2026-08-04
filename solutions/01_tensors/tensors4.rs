@@ -2,10 +2,10 @@
 // Burn ships constructors for common fills: zeros, ones, full, eye, arange.
 // `full` fills a shape with one value.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn sevens() -> Tensor<Backend, 2> {
     let device = Default::default();

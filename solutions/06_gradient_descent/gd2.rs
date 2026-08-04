@@ -3,10 +3,10 @@
 // squared error. At w = 0 the loss is mean([9,25,49,81]) = 41 and the gradient
 // is [-12, -35].
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::tensor::Tensor;
 
-type Backend = Autodiff<NdArray>;
+type Backend = Autodiff<Flex>;
 
 fn mse_and_grad() -> (f32, Vec<f32>) {
     let device = Default::default();

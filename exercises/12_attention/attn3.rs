@@ -13,13 +13,13 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::nn::{Linear, LinearConfig};
 use burn::tensor::activation::softmax;
 use burn::tensor::backend::Backend as _;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 // Returns (weights dims, output dims, per-query weight sums over the key axis).
 fn multi_head() -> (Vec<usize>, Vec<usize>, Vec<f32>) {

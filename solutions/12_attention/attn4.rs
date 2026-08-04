@@ -2,13 +2,13 @@
 //
 // A transformer block: both residuals wrapped in LayerNorm.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::nn::{Linear, LinearConfig};
 use burn::tensor::activation::{relu, softmax};
 use burn::tensor::backend::Backend as _;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn layer_norm(x: Tensor<Backend, 2>) -> Tensor<Backend, 2> {
     let mean = x.clone().mean_dim(1);

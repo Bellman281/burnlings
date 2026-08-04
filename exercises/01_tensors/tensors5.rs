@@ -11,10 +11,10 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Distribution, Tensor};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn uniform_sample() -> Tensor<Backend, 1> {
     let device = Default::default();

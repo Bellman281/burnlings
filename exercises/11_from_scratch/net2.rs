@@ -10,11 +10,11 @@
 //
 // I AM NOT DONE
 
-use burn::backend::{Autodiff, NdArray};
+use burn::backend::{Autodiff, Flex};
 use burn::tensor::activation::relu;
 use burn::tensor::Tensor;
 
-type Backend = Autodiff<NdArray>;
+type Backend = Autodiff<Flex>;
 
 fn manual_vs_autodiff_gap() -> f32 {
     let device = Default::default();

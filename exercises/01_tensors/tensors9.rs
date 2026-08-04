@@ -13,10 +13,10 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn within_tolerance() -> bool {
     let device = Default::default();

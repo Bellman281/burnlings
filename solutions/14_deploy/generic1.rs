@@ -2,7 +2,7 @@
 //
 // Inference written once, generic over B; the backend is chosen at the call site.
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::module::Module;
 use burn::nn::{Linear, LinearConfig};
 use burn::tensor::backend::Backend;
@@ -29,7 +29,7 @@ fn run_inference<B: Backend>(device: &B::Device) -> Tensor<B, 2> {
 }
 
 fn output_dims() -> Vec<usize> {
-    let out = run_inference::<NdArray>(&Default::default());
+    let out = run_inference::<Flex>(&Default::default());
     out.dims().to_vec()
 }
 

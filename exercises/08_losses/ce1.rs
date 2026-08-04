@@ -10,12 +10,12 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::nn::loss::CrossEntropyLossConfig;
 use burn::tensor::activation::softmax;
 use burn::tensor::{Int, Tensor, TensorData};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn loss() -> f32 {
     let device = Default::default();

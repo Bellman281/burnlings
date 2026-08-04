@@ -10,13 +10,13 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::nn::loss::{KLDivLossConfig, Reduction};
 #[allow(unused_imports)]
 use burn::tensor::activation::{log_softmax, softmax};
 use burn::tensor::{Tensor, TensorData};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn loss() -> f32 {
     let device = Default::default();

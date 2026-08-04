@@ -14,14 +14,14 @@
 //
 // I AM NOT DONE
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::module::Module;
 use burn::nn::{Linear, LinearConfig};
 use burn::record::{BinBytesRecorder, FullPrecisionSettings, Recorder};
 use burn::tensor::backend::Backend;
 use burn::tensor::Tensor;
 
-type MyBackend = NdArray;
+type MyBackend = Flex;
 
 #[derive(Module, Debug)]
 struct Model<B: Backend> {

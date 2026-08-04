@@ -2,10 +2,10 @@
 // The L2 (Euclidean) norm is a vector's length: sqrt(sum of squares).
 // For [3, 4] that's sqrt(9 + 16) = 5 — not the plain sum (7).
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::{Tensor, linalg};
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn magnitude() -> f32 {
     let device = Default::default();

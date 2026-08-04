@@ -3,11 +3,11 @@
 // nonlinearity. Two layers: h = relu(x @ W1); out = h @ W2. With the fixed
 // weights here the output is [[2.94], [6.38]].
 
-use burn::backend::NdArray;
+use burn::backend::Flex;
 use burn::tensor::activation::relu;
 use burn::tensor::Tensor;
 
-type Backend = NdArray;
+type Backend = Flex;
 
 fn forward() -> Vec<f32> {
     let device = Default::default();
