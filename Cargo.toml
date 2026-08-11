@@ -174,6 +174,10 @@ name = "xor1"
 path = "exercises/10_backprop/xor1.rs"
 
 [[example]]
+name = "xor2"
+path = "exercises/10_backprop/xor2.rs"
+
+[[example]]
 name = "net1"
 path = "exercises/11_from_scratch/net1.rs"
 
