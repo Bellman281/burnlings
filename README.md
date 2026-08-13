@@ -112,3 +112,7 @@ exercise-to-example mapping.
 
 Burn is built by the [Tracel AI team](https://github.com/tracel-ai/burn).
 This repo is exercise code against Burn's public API, patterned after Rustlings.
+The exercises track the *Learning Burn* book by
+[Omid Safarzadeh](https://github.com/Bellman281) and
+[Hosein Jalili](https://github.com/jhosein58) — thanks to Hosein for the book's
+chapter structure this repo drills against.
