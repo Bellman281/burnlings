@@ -8,6 +8,22 @@ Each exercise is a single file with a compiler or logic error. Your job is to
 fix it. The exercises track the chapters of the *Learning Burn* book, so you can
 read a chapter and then drill the idea until it compiles.
 
+## See it in action
+
+<p align="center">
+  <img src="img/burnlings-bugfix-demo.gif" alt="Burnlings demo: a rank-mismatch bug caught at compile time, fixed, and re-tested" width="720">
+</p>
+
+This is `tensors1`, unedited. The exercise's tensor has 5 numbers in a single
+row — shape `[5]`, rank 1 — but the code asks for rank 2. Real Rust does not
+let that slide: `cargo run` fails before a single number ever prints, with a
+compiler error pointing at the exact line and telling you what it expected.
+Change one digit, and `cargo run` prints the tensor and `cargo test` goes
+green. That's the whole idea of Burnlings: shape mistakes that would blow up
+mid-training in a dynamically-typed framework show up here as a compile
+error, on your first `cargo run`, before you've wasted a GPU-hour finding out
+the hard way.
+
 ## How it works
 
 Every exercise starts with an `// I AM NOT DONE` comment and a `// TODO`
